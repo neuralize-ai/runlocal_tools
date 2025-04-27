@@ -28,6 +28,4 @@ jobs:
       run: python -m build
 
     - name: Publish package to PyPI
-      uses: pypa/pypi-publish@release/v1
-      # The action automatically uses trusted publishing
-      # No API token is needed in GitHub Secrets 
+      uses: pypa/pypi-publish@v1
