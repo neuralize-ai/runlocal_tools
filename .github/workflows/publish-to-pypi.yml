@@ -1,0 +1,33 @@
+name: Publish Python Package to PyPI
+
+on:
+  release:
+    types: [published] # Run only when a release is published on GitHub
+
+permissions:
+  contents: read # Needed to checkout the code
+  id-token: write # Needed for trusted publishing
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x' 
+
+    - name: Install dependencies
+      run: python -m pip install --upgrade pip build twine
+
+    - name: Build package
+      run: python -m build
+
+    - name: Publish package to PyPI
+      uses: pypa/pypi-publish@release/v1
+      # The action automatically uses trusted publishing
+      # No API token is needed in GitHub Secrets 
