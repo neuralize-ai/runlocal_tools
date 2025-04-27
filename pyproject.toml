@@ -3,30 +3,36 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "runlocal_tools" # Replace with your package name
+name = "runlocal_tools"
 version = "0.0.1"
 authors = [
-  { name="Your Name", email="you@example.com" }, # Replace with your details
+  { name="RunLocal", email="founders@runlocal.ai" },
 ]
-description = "A small example package" # Replace with your description
+description = "Tools to make it easy to run models from different frameworks (CoreML, ONNX, TFLite, OpenVINO etc) easily, via a common interface"
 readme = "README.md"
-requires-python = ">=3.8" # Specify your Python version requirement
+requires-python = ">=3.10"
 dependencies = [
     "pillow",
     "coremltools",
     "torch",
     "numpy",
-    "pydantic"
+    "pydantic",
+    "onnx",
+    "onnxruntime",
+    "onnxscript"
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License", # Choose your license
+    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/yourusername/my_python_package" # Replace with your repo URL
-"Bug Tracker" = "https://github.com/yourusername/my_python_package/issues" # Replace
+"Homepage" = "https://github.com/neuralize-ai/runlocal_tools"
+"Bug Tracker" = "https://github.com/neuralize-ai/runlocal_tools/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]  # Root directory for packages
 
 [project.optional-dependencies]
 dev = [
