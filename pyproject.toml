@@ -31,6 +31,9 @@ classifiers = [
 "Homepage" = "https://github.com/neuralize-ai/runlocal_tools"
 "Bug Tracker" = "https://github.com/neuralize-ai/runlocal_tools/issues"
 
+[tool.setuptools.packages.find]
+where = ["src"]  # Root directory for packages
+
 [project.optional-dependencies]
 dev = [
     "pytest",

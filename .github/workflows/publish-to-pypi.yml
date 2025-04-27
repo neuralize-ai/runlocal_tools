@@ -29,7 +29,7 @@ jobs:
 
     - name: Verify package metadata
       run: |
-        python -m twine check dist/*
+        python -m twine check dist/* --strict
         ls -la dist/
 
     - name: Publish package to PyPI
