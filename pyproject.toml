@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "runlocal_tools"
 version = "0.0.1"
 authors = [
-  { name="Ivan Chan", email="ivan@runlocal.ai" },
+  { name="RunLocal", email="founders@runlocal.ai" },
 ]
 description = "Tools to make it easy to run models from different frameworks (CoreML, ONNX, TFLite, OpenVINO etc) easily, via a common interface"
 readme = "README.md"
