@@ -193,7 +193,7 @@ class CoreMLModel(Model):
             return output_feature.type.multiArrayType.shape
         return []
 
-    def execute(self, input_dict: Dict) -> Dict[str, torch.Tensor]:
+    def execute(self, input_dict: Dict) -> Dict[str, np.ndarray]:
         """
         inputs should already be in numpy
         """
@@ -203,7 +203,6 @@ class CoreMLModel(Model):
         elif self.model:
             predict_fn = self.model.predict
 
-        # coreml always requires float32
         if self.coreml_state:
             output_dict = predict_fn(
                 data=input_dict,

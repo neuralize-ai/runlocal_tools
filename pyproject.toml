@@ -10,13 +10,16 @@ authors = [
 ]
 description = "Tools to make it easy to run models from different frameworks (CoreML, ONNX, TFLite, OpenVINO etc) easily, via a common interface"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 dependencies = [
     "pillow",
     "coremltools",
     "torch",
     "numpy",
-    "pydantic"
+    "pydantic",
+    "onnx",
+    "onnxruntime",
+    "onnxscript"
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
